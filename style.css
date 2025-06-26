@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --green-400: hsl(172, 67%, 45%);
+    --green-900: hsl(183, 100%, 15%);
+    --grey-500: hsl(186, 14%, 43%);
+    --grey-400: hsl(184, 14%, 56%);
+    --grey-200: hsl(185, 41%, 84%);
+    --grey-50: hsl(189, 47%, 97%);
+    --white: hsl(0, 100%, 100%);
+}
+html{
+    font-family: "Space Mono", monospace;
+}
+body{
+    font-size: 16px;
+    /* font-family: "Space Mono", monospace; */
+    background-color: var(--grey-200);
+    /* padding-top: 9.125rem; */
+}
+img{
+    max-width: 100%;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 145px;
+}
+h1{
+    font-size: 1.5rem;
+    letter-spacing: 10px;
+    font-weight: 700;
+    color: var(--green-900);
+}
+input{
+    font-size: 1.5rem;
+}
+.bill-text, .p-text, .people-text{
+    color: var(--grey-500);
+    font-weight: 700;
+}
+.container{
+    background-color: var(--white);
+    border-radius: 25px 25px 0px 0px;
+    /* padding: 1rem; */
+}
+.bill-header{
+    display: flex;
+    flex-direction: column;
+}
+.bill-cal{
+    padding: 2.375rem 2.375rem 0;
+}
+.bill-cal .bill-text{
+    margin-bottom: 0.5rem;
+}
+.bill-cal #bill-input{
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    height: 2.75rem;
+    text-align: right;
+    color: var(--green-900);
+    border-radius: 5px;
+    border: none;
+    background-color: var(--grey-50);
+    padding: 0 1rem;
+    margin-bottom: 2.25rem;
+    position: relative;
+    outline-color: var(--green-400);
+}
+
+.bill-cal img {
+    position: absolute;
+    margin-top: 42px;
+    margin-left: 1rem;
+    z-index: 1;
+}
+.bill-tip .p-text{
+    margin-bottom: 1rem;
+}
+.bill-tip .tip-btns{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* flex-direction: column; */
+    /* margin-bottom: 1rem; */
+}
+.bill-tip .tip-btns .prec{
+    width: 8.5rem;
+    height: 3rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--green-900);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Space Mono", monospace;
+}
+.bill-tip .tip-btns #bill-custom{
+    font-family: "Space Mono", monospace;
+    text-align: right;
+    margin-right: 0;
+    width: 8.5rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    padding-right: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--green-900);
+    background-color: var(--grey-50);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline-color: var(--green-400);
+}
+.bill-tip .tip-btns .prec:nth-child(even){
+    margin-right: 0;
+}
+
+.people-div{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+}
+.people-div #tip-people{
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    height: 2.75rem;
+    width: 100%;
+    text-align: right;
+    color: var(--green-900);
+    border-radius: 5px;
+    border: none;
+    background-color: var(--grey-50);
+    padding: 0 1rem;
+    outline: none;
+    position: relative;
+}
+.people-div img{
+    margin-top: 0;
+}
+.bill-output{
+    padding: 2rem 1.5rem;
+}
+.bill-output .tip{
+    background-color: var(--green-900);
+    border-radius: 15px;
+    padding: 3rem 1.5rem 1.5rem;
+}
+.bill-output .tip .tip-amount, .tip-total{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--green-400);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.bill-output .tip .p-text{
+    font-size: 1rem;
+    color: var(--white);
+}
+.bill-output .tip .p-text-2{
+    font-size: 0.8rem;
+    color: var(--grey-400);
+    font-weight: 700;
+}
+.bill-output .tip .reset-btn{
+    font-family: "Space Mono", monospace;
+    width: 100%;
+    background-color: var(--green-400);
+    color: var(--green-900);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    padding: 0.8rem;
+    border: none;
+}
+@media (min-width: 575px){
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+}
+@media (min-width: 1200px){
+    .container{
+        display: flex;
+        width: 925px;
+        /* height: 485px; */
+        border-radius: 25px;
+    }
+    .header{
+        /* margin-bottom: 5.375rem; */
+        /* margin-top: 10.125rem; */
+        font-size: 1.5rem;
+    }
+    .bill-cal{
+        width: 475px;
+        padding: 3rem;
+    }
+    .bill-cal #bill-input{
+        margin-bottom: 2.8125rem;
+    }
+    .bill-tip .tip-btns .prec{
+        width: 7.2rem;
+        height: 3.125rem;
+        margin: 0 1rem 1rem 0;
+    }
+    
+    .bill-tip .tip-btns .prec:nth-child(3){
+        margin-right: 0;
+    }
+    .bill-tip .tip-btns .prec:nth-child(even){
+        margin-right: 1rem;
+    }
+    .bill-tip .tip-btns .prec:nth-last-child(-n + 3){
+        margin-bottom: 3rem;
+    }
+    .bill-tip .tip-btns #bill-custom{
+        width: 7.2rem;
+        height: 3.125rem;
+        margin-bottom: 3rem;
+    }
+    .people-div{
+        margin-top: 0.75rem;
+    }
+    /* output */
+    .bill-output{
+        width: 448px;
+        padding: 2rem 2rem 2rem 0rem;
+    }
+    .bill-output .tip{
+        padding: 3.625rem 2.375rem 2.5rem 2.375rem;
+    }
+    .bill-output .tip .tip-amount{
+        height: 43px;
+        margin-bottom: 3.625rem;
+    }
+    .bill-output .tip .tip-total{
+        height: 43px;
+        margin-bottom: 9rem;
+    }
+     .bill-output .tip .output-tip, .output-total{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+     }
+}
+/* need to add same styles labels, inputs -- manage css codes */
+/* desktop design */
+/* bill amount 0 final output not 0 */
+/* reset button -- active and disable */
