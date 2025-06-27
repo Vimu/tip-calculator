@@ -20,7 +20,7 @@
         <div class="bill-header">
           <label for="Bill" class="bill-text">Bill</label>
           <img src="./images/icon-dollar.svg" alt="icon" class="dollar-icon">
-          <input type="number" id="bill-input">
+          <input type="number" id="bill-input" placeholder="0">
         </div>
         <div class="bill-tip">
           <p class="p-text">Select Tip %</p>
@@ -33,10 +33,13 @@
             <input type="number" id="bill-custom" placeholder="Custom">
           </div>
         </div>
-        <label for="People" class="people-text">Number of People</label>
+        <div class="nop-text">
+          <label for="People" class="people-text">Number of People</label>
+          <p class="error-text">Can't be zero</p>
+        </div>
         <div class="people-div">
           <img src="./images/icon-person.svg" alt="person">
-          <input type="number" id="tip-people">
+          <input type="number" id="tip-people" placeholder="0">
         </div>
       </form>
     </div> 
@@ -47,16 +50,16 @@
             <p class="p-text">Tip Amount</p>
             <p class="p-text-2">/ person</p>
           </div>
-          <span class="output-tip"></span> 
+          <span class="output-tip">0.00</span> 
         </div>
         <div class="tip-total">
           <div>
             <p class="p-text">Total</p>
             <p class="p-text-2">/ person</p> 
           </div>
-          <span class="output-total"></span>
+          <span class="output-total">0.00</span>
         </div>
-        <button class="reset-btn">Reset</button>
+        <button class="reset-btn disabled">Reset</button>
       </div>
     </div>
   </div>

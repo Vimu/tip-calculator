@@ -126,7 +126,14 @@ input{
 .bill-tip .tip-btns .prec:nth-child(even){
     margin-right: 0;
 }
-
+.nop-text{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+}
+.error-text{
+    display: none;
+}
 .people-div{
     margin-top: 0.5rem;
     display: flex;
@@ -134,6 +141,7 @@ input{
     align-items: center;
     text-align: center;
 }
+
 .people-div #tip-people{
     font-family: "Space Mono", monospace;
     font-weight: 700;
@@ -142,11 +150,11 @@ input{
     text-align: right;
     color: var(--green-900);
     border-radius: 5px;
-    border: none;
+    border: 0px solid;
     background-color: var(--grey-50);
     padding: 0 1rem;
-    outline: none;
     position: relative;
+    outline-color: var(--green-400);
 }
 .people-div img{
     margin-top: 0;
@@ -188,7 +196,18 @@ input{
     border-radius: 5px;
     padding: 0.8rem;
     border: none;
+    cursor: pointer;
 }
+.disabled{
+    cursor: not-allowed;
+    opacity: 0.2;
+}
+.error{
+    display: block;
+    color: red;
+    opacity: 0.5;
+}
+
 @media (min-width: 575px){
     body{
         display: flex;
@@ -207,8 +226,8 @@ input{
         border-radius: 25px;
     }
     .header{
-        /* margin-bottom: 5.375rem; */
-        /* margin-top: 10.125rem; */
+        margin-bottom: 5.375rem;
+        margin-top: 10.125rem;
         font-size: 1.5rem;
     }
     .bill-cal{
@@ -266,5 +285,6 @@ input{
 }
 /* need to add same styles labels, inputs -- manage css codes */
 /* desktop design */
-/* bill amount 0 final output not 0 */
-/* reset button -- active and disable */
+/* button hover */
+/* desktop design font sizes */
+/* active btn */
