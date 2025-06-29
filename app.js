@@ -12,16 +12,22 @@ let tipPrecentage = 0;
 let noOfPeople = 0;
 
     
-
+// bill input
 billAmount.addEventListener("input", function(){
     amountOfBill = Math.abs(billAmount.value);
     cal();
 });
+// custom input
 addCustom.addEventListener("input", function(){
     
     tipPrecentage = Math.abs(addCustom.value / 100);
+    //removing active status of precentage button when add custom value. 
+    precentageBtn.forEach(btn => btn
+        .classList.remove("active-btn"));
+
     cal();
 })
+// Number of people
 numberOfPeopleInput.addEventListener("input", function(){
     const errorMsg = document.querySelector(".error-text");
     noOfPeople = parseInt(this.value);
@@ -36,42 +42,66 @@ numberOfPeopleInput.addEventListener("input", function(){
 
     cal();
 });
-
+// buttons - precentage
 precentageBtn.forEach(function(btns){
     btns.addEventListener("click", function(e){
-
-    e.target.checked = true;
-    tipPrecentage =+ e.target.value;
-    addCustom.value = "";    
+        // Remove active class from all buttons first
+        precentageBtn.forEach(b => b
+            .classList.remove("active-btn"));
+        // Add active class to the clicked button
+        btns.classList.add("active-btn");
+        // e.target.checked = true;
+        tipPrecentage = +e.target.value;
+        addCustom.value = "";    
 
     cal();
     });
 });
-
+// tip calculations
 function cal(){
     const amountOfTip = amountOfBill * tipPrecentage;
     const totalBillWithTip = amountOfBill + amountOfTip;
 
-    if(amountOfBill && noOfPeople >= 1){
+    if(amountOfBill > 0 && noOfPeople > 0){
         const tipAmountPerson = (amountOfTip / noOfPeople).toFixed(2);
         const tipTotalPerson = (totalBillWithTip / noOfPeople).toFixed(2);
         tipAmount.innerHTML = `$${tipAmountPerson}`;
         tipTotal.innerHTML = `$${tipTotalPerson}`;
 
+        resetBtn.disabled = false; //reset button enable
         resetBtn.classList.remove("disabled");
     }else{
         tipAmount.textContent = "0.00";
         tipTotal.textContent = "0.00";
+
+        resetBtn.disabled = true; //disabled
+        resetBtn.classList.add("disabled");
     }
 }
+
+// reset button
 resetBtn.addEventListener("click", function(){
+    
 
     tipAmount.textContent = "0.00";
     tipTotal.textContent = "0.00";
-    billAmount.value = 0;
+
+    
+    billAmount.value = "";
     addCustom.value = "";
-    numberOfPeopleInput.value = 0; 
-    resetBtn.classList.add("disabled");
+    numberOfPeopleInput.value = "";
+
+    tipPrecentage = 0;
+    amountOfBill = 0;
+    noOfPeople = 0; 
+
+    precentageBtn.forEach(btn => btn.classList.remove("active-btn"));
+
+    const errorMsg = document.querySelector(".error-text");
+    errorMsg.classList.remove("error");
+    numberOfPeopleInput.style.outlineColor = "#ccc"; // neutral color
+   
+    cal(); // <- recalculate to update UI after resetting
 });
 
 // Reset

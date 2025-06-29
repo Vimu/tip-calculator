@@ -106,6 +106,10 @@ input{
     cursor: pointer;
     font-family: "Space Mono", monospace;
 }
+/* .bill-tip .tip-btns .prec:hover{
+    background-color: var(--green-400);
+    color: var(--green-900);
+} */
 .bill-tip .tip-btns #bill-custom{
     font-family: "Space Mono", monospace;
     text-align: right;
@@ -123,6 +127,7 @@ input{
     cursor: pointer;
     outline-color: var(--green-400);
 }
+
 .bill-tip .tip-btns .prec:nth-child(even){
     margin-right: 0;
 }
@@ -207,18 +212,51 @@ input{
     color: red;
     opacity: 0.5;
 }
+.bill-tip .tip-btns .prec.active-btn{
+    background-color: var(--green-400);
+    color: var(--green-900);
 
-@media (min-width: 575px){
+}
+@media (min-width: 500px){
     body{
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-        min-height: 100vh;
         flex-direction: column;
     }
+    .bill-tip .tip-btns .prec{
+        margin-right: 1rem;
+    }
+      .bill-tip .tip-btns .prec:nth-child(5){
+        margin-right: 0;
+    }
+      .bill-tip .tip-btns .prec:nth-child(odd){
+        margin-right: 0;
+    }
+     .bill-tip .tip-btns #bill-custom{
+        margin-right: 0;
+     }
 }
-@media (min-width: 1200px){
+@media (min-width: 800px){
+    .container{
+        width: 700px;
+        display: flex;
+    }
+    .bill-cal{
+        width: 50%;
+        padding-bottom: 2rem;
+        height: 50%;
+    }
+    .bill-output{
+        width: 85%;
+    } 
+    .bill-tip .tip-btns .prec, #bill-custom{
+        width: 5.2rem;
+        height: 2.125rem;
+    }
+}
+@media (min-width: 1000px){
     .container{
         display: flex;
         width: 925px;
@@ -283,8 +321,3 @@ input{
         font-size: 3rem;
      }
 }
-/* need to add same styles labels, inputs -- manage css codes */
-/* desktop design */
-/* button hover */
-/* desktop design font sizes */
-/* active btn */
